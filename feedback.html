@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share feedback — FeedbackHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="give">
+  <div id="nav"></div>
+  <main class="page narrow">
+    <div class="page-head"><div><div class="eyebrow">Feedback</div><h1>Tell us what you think</h1>
+      <p class="subtitle">Your feedback goes straight to the team that can act on it. It takes under a minute.</p></div></div>
+    <section class="pulse" id="pulse" aria-label="Recent feedback ratings">
+      <span class="pulse-label">Recent pulse</span><span class="pulse-empty" id="pulseEmpty">No feedback yet — be the first.</span>
+    </section>
+    <div class="card">
+      <form id="feedbackForm" novalidate>
+        <div class="field"><label for="customerName">Your name</label>
+          <input type="text" id="customerName" autocomplete="name" maxlength="60" required /></div>
+        <div class="field"><label for="category">Category <span class="req">*</span></label>
+          <select id="category" required><option value="" disabled selected>Choose a category</option>
+            <option>Product</option><option>Service</option><option>Support</option><option>Delivery</option><option>Other</option></select></div>
+        <div class="field"><label>Rating <span class="req">*</span></label>
+          <div class="star-input" id="starInput" role="group" aria-label="Choose a rating from one to five stars">
+            <button type="button" data-value="1" aria-label="1 star" aria-pressed="false"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg></button><button type="button" data-value="2" aria-label="2 stars" aria-pressed="false"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg></button><button type="button" data-value="3" aria-label="3 stars" aria-pressed="false"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg></button><button type="button" data-value="4" aria-label="4 stars" aria-pressed="false"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg></button><button type="button" data-value="5" aria-label="5 stars" aria-pressed="false"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg></button>
+          </div>
+          <input type="hidden" id="rating" /><div class="hint" id="ratingHint" aria-live="polite">Choose a rating from 1 to 5.</div></div>
+        <div class="field"><label for="comment">Comments or suggestions <span class="req">*</span></label>
+          <textarea id="comment" placeholder="What worked well? What could be better?" maxlength="500" required></textarea>
+          <div class="field-meta"><span>At least 5 characters.</span><span id="commentCount">0 / 500</span></div></div>
+        <div class="form-actions"><button type="submit" class="btn btn-primary" id="submitFeedback">Submit feedback</button>
+          <span class="hint">Saved securely in this browser.</span></div>
+        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

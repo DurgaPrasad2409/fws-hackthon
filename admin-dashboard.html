@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — FeedbackHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="dash">
+  <div id="nav"></div>
+  <main class="page wide">
+    <div class="page-head"><div><div class="eyebrow">Admin</div><h1>Feedback inbox</h1>
+      <p class="subtitle">Triage, review and resolve customer feedback. <span id="resultCount"></span></p></div>
+      <button class="btn btn-primary" id="exportBtn" type="button"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export CSV</button></div>
+    <div class="card toolbar-card"><div class="toolbar">
+      <div class="search"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="searchInput" placeholder="Search name or comment…" aria-label="Search feedback" /></div>
+      <select id="categoryFilter" aria-label="All categories"><option value="">All categories</option><option >Product</option><option >Service</option><option >Support</option><option >Delivery</option><option >Other</option></select><select id="statusFilter" aria-label="All statuses"><option value="">All statuses</option><option >Pending</option><option >Reviewed</option><option >Resolved</option></select>
+      <select id="ratingFilter" aria-label="All ratings"><option value="">All ratings</option><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select>
+      <button class="btn btn-ghost" id="clearBtn" type="button">Clear</button></div></div>
+    <div class="card table-card" id="tableWrap"><div class="table-scroll"><table class="table"><thead><tr><th>Date</th><th>Customer</th><th>Category</th><th>Rating</th><th>Comment</th><th>Status</th><th class="th-actions">Actions</th></tr></thead><tbody id="tableBody"></tbody></table></div></div>
+    <div class="card empty-state" id="emptyState" hidden><h3>No feedback found</h3><p>Try adjusting your search or filters.</p></div>
+    <div class="pager" id="pager"><span id="pagerInfo"></span><div class="pager-btns"><button class="btn btn-ghost btn-sm" id="prevBtn" type="button">Previous</button><span id="pageLabel"></span><button class="btn btn-ghost btn-sm" id="nextBtn" type="button">Next</button></div></div>
+  </main>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

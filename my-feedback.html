@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My feedback — FeedbackHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="mine">
+  <div id="nav"></div>
+  <main class="page narrow">
+    <div class="page-head"><div><div class="eyebrow">Your activity</div><h1>My feedback</h1>
+      <p class="subtitle">Track the status of everything you’ve submitted.</p></div><a class="btn btn-primary" href="feedback.html"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New feedback</a></div>
+    <div class="alert alert-success" id="confirmBox" hidden role="status">Thank you — your feedback was submitted successfully.</div>
+    <div id="list"></div>
+  </main>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/my-feedback.js"></script>
+</body>
+</html>

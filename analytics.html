@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — FeedbackHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body data-page="analytics">
+  <div id="nav"></div>
+  <main class="page wide">
+    <div class="page-head"><div><div class="eyebrow">Admin</div><h1>Insights</h1>
+      <p class="subtitle">How customers feel and where issues cluster.</p></div></div>
+    <div class="stat-grid" id="statGrid"></div>
+    <div class="chart-grid">
+      <div class="card chart-card wide-2"><h3>Feedback volume by category</h3><canvas id="categoryChart" height="110"></canvas></div>
+      <div class="card chart-card"><h3>Status breakdown</h3><canvas id="statusChart" height="200"></canvas></div>
+      <div class="card chart-card wide-2"><h3>Rating distribution</h3><canvas id="ratingChart" height="110"></canvas></div>
+    </div>
+    <div class="card empty-state" id="noData" hidden><h3>No data yet</h3><p>Charts appear once feedback is submitted.</p></div>
+  </main>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>
